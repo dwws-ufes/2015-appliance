@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/resources/decorator.xhtml">
+
+    <ui:define name="title">Registro</ui:define>
+    <ui:define name="contents">
+        <h1>Registro</h1>
+        <p>Entre com os dados do Professor.</p>
+        
+        <h:form id="regForm">
+            <p>Nome: <h:inputText id="name" value="#{adminController.teacher.name}" size="30" /></p>
+        
+            <p>E-mail: <h:inputText id="email" value="#{adminController.teacher.email}" size="20" /></p>
+                 
+            <p><h:commandButton action="#{adminController.registerteacher}" value="Register" /></p>
+        </h:form>
+    </ui:define>
+</ui:composition>

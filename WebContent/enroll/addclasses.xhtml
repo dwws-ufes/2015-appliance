@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/resources/decorator.xhtml"
+                xmlns:p="http://java.sun.com/jsf/html">
+
+    <ui:define name="title">Aluno</ui:define>
+    <ui:define name="contents">
+        <h1>Disciplinas Cadastradas</h1>
+        <p>Aqui voce encontras todas as Classes atualmente disponiveis no Appliance.</p>
+        <p>Basta selecionar as disciplinas que gostaria de se matricular e deselecionar as que gostaria de cancelar.</p>
+        <p>Após seleciona-las basta clicar em Matricular.</p>
+        <h:form id="regForm">
+	        <h:panelGrid>
+		        <p:selectManyCheckbox value="#{loginController.wtClassesList}" layout = "pageDirection">
+		        	<f:selectItems value="#{classesController.classesList}" var="classesList"
+		        itemValue="#{classesList.name}" itemLabel="#{classesList.name}" />
+		        </p:selectManyCheckbox>
+	        </h:panelGrid>
+	        <p></p>
+            <p><h:commandButton action="#{loginController.matricula}" value="Matricula" /></p>
+        </h:form>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/resources/decorator.xhtml">
+
+    <ui:define name="title">Admin</ui:define>
+    <ui:define name="contents">
+        <h1>Admin</h1>
+        <p>Escolha qual tipo de entrada voce deseja fazer.</p>
+        <h:form id="regForm">
+            <p><h:commandButton action="#{adminController.teacher}" value="Professor" /></p>
+        
+            <p><h:commandButton action="#{adminController.classes}" value="Classe" /></p>
+        
+            <p><h:commandButton action="#{adminController.room}" value="Sala" /></p>
+        </h:form>
+    </ui:define>
+</ui:composition>
