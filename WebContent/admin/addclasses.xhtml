@@ -12,13 +12,23 @@
         <p>Entre com os dados da Classe.</p>
         
         <h:form id="regForm">
-            <p>Nome: <h:inputText id="name" value="#{adminController.classes.name}" size="30" /></p>
-        
-            <p>Room: <h:inputText id="roomnumber" value="#{adminController.classes.roomnumber}" size="30" /></p>
-            
-            <p>Teacher: <h:inputText id="teachername" value="#{adminController.classes.teachername}" size="30" /></p>
-                 
-            <p><h:commandButton action="#{adminController.registerclasses}" value="Register" /></p>
+	        <h:panelGrid columns="2">
+				<h:outputLabel for="name">Name:</h:outputLabel>
+				<h:inputText id="name" value="#{adminController.classes.name}" size="30">
+					<f:ajax event="blur" listener="#{adminController.suggestDescription}" execute="@this" render="description" />
+				</h:inputText>
+				<h:outputLabel for="roomnumber">Room Number:</h:outputLabel>
+				<h:inputText id="roomnumber" value="#{adminController.classes.roomnumber}" size="30">
+					<f:ajax event="blur" listener="#{adminController.printRoom}" execute="@this"/>
+				</h:inputText>
+				<h:outputLabel for="teachername">Teacher:</h:outputLabel>
+				<h:inputText id="teachername" value="#{adminController.classes.teachername}" size="30">
+					<f:ajax event="blur" listener="#{adminController.printTeacher}" execute="@this"/>
+				</h:inputText>
+				<h:outputLabel for="description">Description:</h:outputLabel>
+				<h:inputTextarea id="description" value="#{adminController.classes.description}" cols="30" rows="5" size="30" />
+			</h:panelGrid>    
+	        <p><h:commandButton action="#{adminController.registerclasses}" value="Register" /></p>
         </h:form>
     </ui:define>
 </ui:composition>

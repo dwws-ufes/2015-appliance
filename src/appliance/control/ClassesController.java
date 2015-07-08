@@ -14,6 +14,7 @@ import appliance.domain.Classes;
 @SessionScoped
 public class ClassesController implements Serializable {
 	private List<Classes> classesList;
+	private Classes selectedClasses;
 	private static final long serialVersionUID = 1L;
 	@EJB
     private ClassesService classesService;
@@ -24,5 +25,10 @@ public class ClassesController implements Serializable {
 	public void setClassesList(List<Classes> classesList) {
 		this.classesList = classesList;
 	}
-    
+	public Classes getSelectedClasses() {
+		return selectedClasses;
+	}
+	public void setSelectedClasses(Classes selectedClasses) {
+		this.selectedClasses = selectedClasses;
+	}
 }

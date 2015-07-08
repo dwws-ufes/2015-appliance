@@ -69,4 +69,21 @@ public class AdminController implements Serializable {
     	this.room = new Room();
         return "/admin/addroom.xhtml";
     }
+    
+    public void suggestDescription() 
+    {
+    	if( this.classes != null)
+    	{
+    		System.out.println(this.classes.getTeachername());
+    		adminService.suggestDescription(this.classes);
+    	}
+    }
+    public void printTeacher()
+    {
+    	System.out.println(this.classes.getTeachername());
+    }
+    public void printRoom()
+    {
+    	System.out.println(this.classes.getRoomnumber());
+    }
 }

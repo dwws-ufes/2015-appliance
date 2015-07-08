@@ -16,6 +16,7 @@ public class Classes {
 	private int roomnumber;
 	private String code;
 	private int students;
+	private String description;
 	
 	public Long getId() {
 		return id;
@@ -45,10 +46,11 @@ public class Classes {
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
-	public void setTeacher(String teacher) {
+	/*public void setTeacher(String teacher) {
+		System.out.println(teacher);
 		this.teacher = new Teacher();
 		this.teacher.setName(teacher);
-	}
+	}*/
 	public int getStudents() {
 		return students;
 	}
@@ -73,5 +75,10 @@ public class Classes {
 	public void setCode(String code) {
 		this.code = code;
 	}
-	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

@@ -6,37 +6,43 @@
     xmlns:h="http://java.sun.com/jsf/html"
     template="/resources/decorator.xhtml">
 
-    <ui:define name="title">Admin</ui:define>
+    <ui:define name="title">Classes</ui:define>
     <ui:define name="contents">
         <h1>Disciplinas Cadastradas</h1>
-        <p>Aqui voce encontras todas as Classes atualmento disponiveis no Appliance.</p>
-        
+        <p>Aqui voce encontras todas as Classes atualmente disponiveis no Appliance.</p>
+        <a style="float: right;" href="#{facesContext.externalContext.requestContextPath}/data/addclasses">RDF/XML</a>
         <h:dataTable id="books"
-    columnClasses="list-column-center,
-        list-column-right, list-column-center,
-        list-column-right" headerClass="list-header"
-        rowClasses="list-row"
-    styleClass="list-background"
-    value = "#{classesController.classesList}" var = "list">   
-
-    <h:column>
-        <f:facet name="header">
-            <h:outputText value="Nome" />
-        </f:facet>
-        <h:outputText value="#{list.name}"/>
-    </h:column>
-    <h:column>                       
-        <f:facet name="header">
-            <h:outputText value="Professor" />
-        </f:facet>
-        <h:outputText value="#{list.teachername}"/>
-    </h:column>
-    <h:column>                       
-        <f:facet name="header">
-            <h:outputText value="Sala" />
-        </f:facet>
-        <h:outputText value="#{list.roomnumber}"/>
-    </h:column>
-</h:dataTable>
+		    columnClasses="list-column-center,
+        	list-column-right, list-column-center,
+        	list-column-right" headerClass="list-header"
+        	rowClasses="list-row"
+    		styleClass="list-background"
+    		value = "#{classesController.classesList}" var = "list">   
+	
+		    <h:column>
+		        <f:facet name="header">
+		            <h:outputText value="Nome" />
+		        </f:facet>
+		        <h:outputText value="#{list.name}"/>
+		    </h:column>
+		    <h:column>                       
+		        <f:facet name="header">
+		            <h:outputText value="Professor" />
+		        </f:facet>
+		        <h:outputText value="#{list.teachername}"/>
+		    </h:column>
+		    <h:column>                       
+		        <f:facet name="header">
+		            <h:outputText value="Sala" />
+		        </f:facet>
+		        <h:outputText value="#{list.roomnumber}"/>
+		    </h:column>
+		    <h:column>
+		    	<f:facet name="header">
+		            <h:outputText value="Descrição" />
+		        </f:facet>
+		        <h:outputText value="#{list.description}"/>
+		    </h:column>
+		</h:dataTable>
     </ui:define>
 </ui:composition>
